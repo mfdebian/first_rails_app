@@ -1,0 +1,12 @@
+<h1>Items</h1>
+
+<% @items.each do |item| %>
+  <p> Item: <%= item.name %> </p>
+  <p> Price: <%= item.price %> </p>
+  <li>
+    <%= link_to "View the item", item %>
+  </li>
+<% end %>
+<p>
+  <%= link_to "Add item", new_item_path %>
+</p>

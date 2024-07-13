@@ -1,0 +1,24 @@
+<h1>
+  <strong>
+    <%= @item.name %>
+  </strong>
+</h1>
+<p>
+  <%= @item.price %>
+</p>
+
+<p>
+  <%= link_to "Edit this item", edit_item_path(@item) %>
+</p>
+
+<%= link_to "Delete item",
+  item_path(@item),
+  data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  } 
+%>
+
+<p>
+  <%= link_to "Back to items", items_path %>
+</p>
