@@ -1,0 +1,18 @@
+<h2>Save a trader:</h2>
+<%= form_with model: [ @item, @item.traders.build ] do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :location %><br>
+    <%= form.text_field :location %>
+  </p>
+  <p>
+    <%= form.label :role %><br>
+    <%= form.text_field :role %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

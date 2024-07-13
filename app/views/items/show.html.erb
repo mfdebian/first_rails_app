@@ -7,6 +7,11 @@
   <%= @item.price %>
 </p>
 
+<h2>Traders</h2>
+<%= render @item.traders %>
+
+<%= render 'traders/form' %>
+
 <p>
   <%= link_to "Edit this item", edit_item_path(@item) %>
 </p>

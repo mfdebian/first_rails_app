@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_13_171206) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_13_215655) do
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.integer "price"
@@ -18,4 +18,25 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_13_171206) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "traders", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.string "role"
+    t.integer "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_traders_on_item_id"
+  end
+
+  create_table "trades", force: :cascade do |t|
+    t.string "buyer"
+    t.string "seller"
+    t.integer "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_trades_on_item_id"
+  end
+
+  add_foreign_key "traders", "items"
+  add_foreign_key "trades", "items"
 end
