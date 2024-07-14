@@ -28,15 +28,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_13_215655) do
     t.index ["item_id"], name: "index_traders_on_item_id"
   end
 
-  create_table "trades", force: :cascade do |t|
-    t.string "buyer"
-    t.string "seller"
-    t.integer "item_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_trades_on_item_id"
-  end
-
   add_foreign_key "traders", "items"
-  add_foreign_key "trades", "items"
 end
