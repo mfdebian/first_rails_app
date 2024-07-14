@@ -1,3 +1,14 @@
 <h1>Edit Item</h1>
-
-<%= render "form", item: @item %>
+<div>
+  <%= render "form", item: @item %>
+  <p>
+    <%= button_to 'Clear Traders',
+      clear_traders_item_path(@item),
+      method: :delete,
+      data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      }
+    %>
+  </p>
+</div>

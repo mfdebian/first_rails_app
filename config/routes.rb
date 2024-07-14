@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root "items#index"
 
   resources :items do
+    member do
+      delete :clear_traders
+    end
     resources :traders
   end
 
